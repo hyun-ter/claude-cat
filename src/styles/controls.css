@@ -1,0 +1,138 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(192, 132, 252, 0.2);
+}
+
+/* ========== Toggle Button ========== */
+.btn-toggle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.75rem 2.5rem;
+  border-radius: 50px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  letter-spacing: 0.05em;
+}
+
+.btn-toggle.playing {
+  background: linear-gradient(135deg, #FF6B9D, #FF8C69);
+  color: white;
+  box-shadow: 0 4px 16px rgba(255, 107, 157, 0.4);
+}
+
+.btn-toggle.paused {
+  background: linear-gradient(135deg, #6EE7B7, #34D399);
+  color: white;
+  box-shadow: 0 4px 16px rgba(110, 231, 183, 0.4);
+}
+
+.btn-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(192, 132, 252, 0.35);
+}
+
+.btn-toggle:active {
+  transform: translateY(0);
+}
+
+/* ========== Move Selector ========== */
+.move-selector {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-move {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background: #F3E8FF;
+  color: #7C3AED;
+  transition: all 0.15s ease;
+}
+
+.btn-move:hover {
+  background: #E9D5FF;
+  transform: translateY(-1px);
+}
+
+.btn-move.active {
+  background: linear-gradient(135deg, #C084FC, #A855F7);
+  color: white;
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ========== Speed Selector ========== */
+.speed-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.speed-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #7C3AED;
+}
+
+.btn-speed {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 50px;
+  background: #FFF0F8;
+  color: #BE185D;
+  transition: all 0.15s ease;
+}
+
+.btn-speed:hover {
+  background: #FCE7F3;
+}
+
+.btn-speed.active {
+  background: linear-gradient(135deg, #FF6B9D, #E879A0);
+  color: white;
+  box-shadow: 0 3px 10px rgba(255, 107, 157, 0.35);
+}
+
+/* ========== 반응형 ========== */
+@media (max-width: 380px) {
+  .controls {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .btn-toggle {
+    font-size: 1rem;
+    padding: 0.65rem 2rem;
+  }
+
+  .btn-move {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .controls {
+    padding: 2rem;
+    gap: 1.25rem;
+  }
+
+  .btn-toggle {
+    font-size: 1.2rem;
+    padding: 0.85rem 3rem;
+  }
+}

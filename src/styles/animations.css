@@ -1,0 +1,100 @@
+/* ========== Cat Stage ========== */
+.cat-stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 1.5rem;
+}
+
+.cat-image {
+  width: 200px;
+  height: 220px;
+  will-change: transform;
+  filter: drop-shadow(0 8px 16px rgba(244, 164, 96, 0.4));
+}
+
+/* ========== Dance (좌우 흔들기 + 통통) ========== */
+.cat-dance {
+  animation: dance var(--dur, 2s) ease-in-out infinite;
+}
+
+@keyframes dance {
+  0%   { transform: translateY(0) rotate(-8deg) scale(1); }
+  25%  { transform: translateY(-18px) rotate(0deg) scale(1.05); }
+  50%  { transform: translateY(0) rotate(8deg) scale(1); }
+  75%  { transform: translateY(-18px) rotate(0deg) scale(1.05); }
+  100% { transform: translateY(0) rotate(-8deg) scale(1); }
+}
+
+/* ========== Jump (점프) ========== */
+.cat-jump {
+  animation: jump var(--dur, 2s) cubic-bezier(0.33, 1, 0.68, 1) infinite;
+}
+
+@keyframes jump {
+  0%   { transform: translateY(0) scaleY(1); }
+  10%  { transform: translateY(0) scaleY(0.85) scaleX(1.1); }
+  40%  { transform: translateY(-80px) scaleY(1.1) scaleX(0.95); }
+  60%  { transform: translateY(-80px) scaleY(1.1) scaleX(0.95); }
+  90%  { transform: translateY(0) scaleY(0.85) scaleX(1.1); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+/* ========== Spin (회전) ========== */
+.cat-spin {
+  animation: spin var(--dur, 2s) linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg) scale(1); }
+  50%  { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ========== Wiggle (흔들기) ========== */
+.cat-wiggle {
+  animation: wiggle var(--dur, 2s) ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(0deg) translateX(0); }
+  15%  { transform: rotate(-15deg) translateX(-10px); }
+  30%  { transform: rotate(15deg) translateX(10px); }
+  45%  { transform: rotate(-10deg) translateX(-6px); }
+  60%  { transform: rotate(10deg) translateX(6px); }
+  75%  { transform: rotate(-5deg) translateX(-3px); }
+  90%  { transform: rotate(5deg) translateX(3px); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+/* ========== Music Notes ========== */
+.music-notes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.note {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: floatNote 2s ease-in-out infinite;
+  opacity: 0;
+}
+
+.note-1 { top: 20%; left: 5%;  animation-delay: 0s;    color: #FF6B9D; }
+.note-2 { top: 10%; right: 5%; animation-delay: 0.5s;  color: #C084FC; }
+.note-3 { top: 50%; left: 2%;  animation-delay: 1s;    color: #FCD34D; }
+.note-4 { top: 35%; right: 2%; animation-delay: 1.5s;  color: #6EE7B7; }
+
+@keyframes floatNote {
+  0%   { opacity: 0;   transform: translateY(0) scale(0.8); }
+  30%  { opacity: 1;   transform: translateY(-20px) scale(1.1); }
+  70%  { opacity: 0.6; transform: translateY(-40px) scale(1); }
+  100% { opacity: 0;   transform: translateY(-60px) scale(0.8); }
+}
